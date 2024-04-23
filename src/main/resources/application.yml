@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ControllerPractise
+  datasource:
+    url: jdbc:mysql://localhost:3306/hr
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: 8085
+
+

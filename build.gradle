@@ -20,10 +20,8 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation group: 'mysql', name: 'mysql-connector-java', version: "${mysql_connector_version}"
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version:"${spring_boot_starter_jdbc_version}"
-
-
-
-
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
 }
 
 tasks.named('test') {
