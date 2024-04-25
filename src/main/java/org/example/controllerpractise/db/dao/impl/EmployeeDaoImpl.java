@@ -1,6 +1,5 @@
 package org.example.controllerpractise.db.dao.impl;
 
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.example.controllerpractise.db.dao.EmployeeDao;
 import org.example.controllerpractise.db.model.Employee;
@@ -49,7 +48,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public void delete(Integer id) {
-        String query="Delete  from hr.employee where employee_id=:id";
+        String query="update hr.employee set status=0 where employee_id=:id";
         jdbcTemplate.update(query,new MapSqlParameterSource("id",id));
     }
 }

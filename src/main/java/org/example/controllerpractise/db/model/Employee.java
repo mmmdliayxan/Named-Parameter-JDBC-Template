@@ -15,4 +15,5 @@ public class Employee {
     private int departmentId;
     private Date birthDate;
     private int salary;
+    private int status;
 }

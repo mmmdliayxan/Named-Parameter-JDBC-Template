@@ -1,6 +1,5 @@
 package org.example.controllerpractise.db.service.impl;
 
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.controllerpractise.db.dao.EmployeeDao;
@@ -19,14 +18,13 @@ import java.util.List;
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeDao employeeDao;
-    private final HttpServletResponse response;
 
     @Override
     public  ResponseEntity<Employee> getById(Integer id) {
         log.info("getById method is started");
         Employee employee = employeeDao.getById(id);
         if (employee == null) {
-            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            ResponseEntity.status(HttpStatus.NOT_FOUND);
             try {
                 throw new NotFoundException("there isn't any employee like this");
             } catch (NotFoundException e) {
